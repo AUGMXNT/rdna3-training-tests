@@ -16,4 +16,6 @@ time CUDA_VISIBLE_DEVICES=1 python src/train_bash.py \
     --num_train_epochs 3.0 \
     --plot_loss \
     --fp16 \
+    --quantization_bit 4 \
+    --use_unsloth \
     --overwrite_output_dir

@@ -18,5 +18,3 @@ time CUDA_VISIBLE_DEVICES=1 python src/train_bash.py \
     --fp16 \
     --quantization_bit 4 \
     --overwrite_output_dir
-
-# --flash_attn \
