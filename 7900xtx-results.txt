@@ -1,0 +1,72 @@
+### lora
+
+$ rocm-smi --showmeminfo vram
+============================ ROCm System Management Interface ============================
+================================== Memory Usage (Bytes) ==================================
+GPU[0]          : VRAM Total Memory (B): 21458059264
+GPU[0]          : VRAM Total Used Memory (B): 28155904
+GPU[1]          : VRAM Total Memory (B): 25753026560
+GPU[1]          : VRAM Total Used Memory (B): 5578280960
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
+
+
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 273/273 [14:46<00:00,  3.25s/it]
+[INFO|trainer.py:2936] 2024-02-18 11:27:05,834 >> Saving model checkpoint to test
+[INFO|configuration_utils.py:729] 2024-02-18 11:27:06,298 >> loading configuration file config.json from cache at /home/lhl/.cache/huggingface/hub/models--TinyLlama--TinyLlama-1.1B-Chat-v1.0/snapshots/77e23968eed12d195bd46c519aa679cc22a27ddc/config.json
+[INFO|configuration_utils.py:792] 2024-02-18 11:27:06,299 >> Model config LlamaConfig {
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 2048,
+  "initializer_range": 0.02,
+  "intermediate_size": 5632,
+  "max_position_embeddings": 2048,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 22,
+  "num_key_value_heads": 4,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 10000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.37.2",
+  "use_cache": true,
+  "vocab_size": 32000
+}
+
+[INFO|tokenization_utils_base.py:2433] 2024-02-18 11:27:06,312 >> tokenizer config file saved in test/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2442] 2024-02-18 11:27:06,312 >> Special tokens file saved in test/special_tokens_map.json
+***** train metrics *****
+  epoch                    =        3.0
+  train_loss               =     2.1529
+  train_runtime            = 0:14:46.19
+  train_samples_per_second =      4.926
+  train_steps_per_second   =      0.308
+Figure saved: test/training_loss.png
+02/18/2024 11:27:06 - WARNING - llmtuner.extras.ploting - No metric eval_loss to plot.
+[INFO|modelcard.py:452] 2024-02-18 11:27:06,380 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
+
+real    15m8.038s
+user    8m40.101s
+sys     0m7.184s
+
+### qlora
+
+$ rocm-smi --showmeminfo vram
+============================ ROCm System Management Interface ============================
+================================== Memory Usage (Bytes) ==================================
+GPU[0]          : VRAM Total Memory (B): 21458059264
+GPU[0]          : VRAM Total Used Memory (B): 28155904
+GPU[1]          : VRAM Total Memory (B): 25753026560
+GPU[1]          : VRAM Total Used Memory (B): 4101840896
+==========================================================================================
+================================== End of ROCm SMI Log ===================================
