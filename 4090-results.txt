@@ -1,0 +1,157 @@
+### lora
+❯ max=0; while : ; do usage=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | awk '{print $1}' | sort -nr | head -n 1); if [ "$usage" -gt "$max" ]; then max=$usage; fi; echo $max; sleep 1; done
+5015
+
+
+
+
+### qlora
+
+❯ max=0; while : ; do usage=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | awk '{print $1}' | sort -nr | head -n 1); if [ "$usage" -gt "$max" ]; then max=$usage; fi; echo $max; sleep 1; done
+3605
+
+[INFO|tokenization_utils_base.py:2433] 2024-02-18 22:34:00,355 >> tokenizer config file saved in test/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2442] 2024-02-18 22:34:00,355 >> Special tokens file saved in test/special_tokens_map.json
+***** train metrics *****
+  epoch                    =        3.0
+  train_loss               =     2.1873
+  train_runtime            = 0:05:07.53
+  train_samples_per_second =     14.193
+  train_steps_per_second   =      0.888
+Figure saved: test/training_loss.png
+02/18/2024 22:34:00 - WARNING - llmtuner.extras.ploting - No metric eval_loss to plot.
+[INFO|modelcard.py:452] 2024-02-18 22:34:00,469 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
+wandb: - 0.034 MB of 0.034 MB uploaded
+wandb: Run history:
+wandb:                    train/epoch ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▆▆▆▆▇▇▇▇███
+wandb:              train/global_step ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▆▆▆▆▇▇▇▇███
+wandb:            train/learning_rate ████▇▇▇▇▆▆▆▅▅▄▄▄▃▃▂▂▂▂▁▁▁▁▁
+wandb:                     train/loss ▆▅▆▆▅▄▅▄▅█▄▄▃▂▅▅▄▁▆▂▃▄▁▅▄▂▄
+wandb:               train/total_flos ▁
+wandb:               train/train_loss ▁
+wandb:            train/train_runtime ▁
+wandb: train/train_samples_per_second ▁
+wandb:   train/train_steps_per_second ▁
+wandb: 
+wandb: Run summary:
+wandb:                    train/epoch 3.0
+wandb:              train/global_step 273
+wandb:            train/learning_rate 0.0
+wandb:                     train/loss 2.179
+wandb:               train/total_flos 2.777434086703104e+16
+wandb:               train/train_loss 2.18732
+wandb:            train/train_runtime 307.5359
+wandb: train/train_samples_per_second 14.193
+wandb:   train/train_steps_per_second 0.888
+wandb: 
+wandb: 🚀 View run thriving-fuse-39 at: https://wandb.ai/augmxnt/huggingface/runs/y9bl5mqt
+wandb: ️⚡ View job at https://wandb.ai/augmxnt/huggingface/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjEyNTU5ODkwOQ==/version_details/v17
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20240218_222852-y9bl5mqt/logs
+
+real    5m49.302s
+user    3m35.124s
+sys     2m0.278s
+
+
+### qlora fa2
+
+❯ max=0; while : ; do usage=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | awk '{print $1}' | sort -nr | head -n 1); if [ "$usage" -gt "$max" ]; then max=$usage; fi; echo $max; sleep 1; done
+3713
+
+[INFO|tokenization_utils_base.py:2433] 2024-02-18 22:27:02,463 >> tokenizer config file saved in test/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2442] 2024-02-18 22:27:02,463 >> Special tokens file saved in test/special_tokens_map.json
+***** train metrics *****
+  epoch                    =        3.0
+  train_loss               =     2.1873
+  train_runtime            = 0:04:58.29
+  train_samples_per_second =     14.633
+  train_steps_per_second   =      0.915
+Figure saved: test/training_loss.png
+02/18/2024 22:27:02 - WARNING - llmtuner.extras.ploting - No metric eval_loss to plot.
+[INFO|modelcard.py:452] 2024-02-18 22:27:02,551 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
+wandb: / 0.034 MB of 0.034 MB uploaded
+wandb: Run history:
+wandb:                    train/epoch ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▆▆▆▆▇▇▇▇███
+wandb:              train/global_step ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▆▆▆▆▇▇▇▇███
+wandb:            train/learning_rate ████▇▇▇▇▆▆▆▅▅▄▄▄▃▃▂▂▂▂▁▁▁▁▁
+wandb:                     train/loss ▆▅▆▆▅▄▅▄▅█▄▄▃▂▅▅▄▁▆▂▃▄▁▅▄▂▄
+wandb:               train/total_flos ▁
+wandb:               train/train_loss ▁
+wandb:            train/train_runtime ▁
+wandb: train/train_samples_per_second ▁
+wandb:   train/train_steps_per_second ▁
+wandb: 
+wandb: Run summary:
+wandb:                    train/epoch 3.0
+wandb:              train/global_step 273
+wandb:            train/learning_rate 0.0
+wandb:                     train/loss 2.179
+wandb:               train/total_flos 2.777434086703104e+16
+wandb:               train/train_loss 2.18732
+wandb:            train/train_runtime 298.2979
+wandb: train/train_samples_per_second 14.633
+wandb:   train/train_steps_per_second 0.915
+wandb: 
+wandb: 🚀 View run vibrant-wish-38 at: https://wandb.ai/augmxnt/huggingface/runs/qjgywl7z
+wandb: ️⚡ View job at https://wandb.ai/augmxnt/huggingface/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjEyNTU5ODkwOQ==/version_details/v17
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20240218_222204-qjgywl7z/logs
+
+real    5m17.965s
+user    3m29.877s
+sys     1m56.546s
+
+
+### qlora unsloth
+
+❯ max=0; while : ; do usage=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits | awk '{print $1}' | sort -nr | head -n 1); if [ "$usage" -gt "$max" ]; then max=$us
+age; fi; echo $max; sleep 1; done           
+2691
+
+[INFO|tokenization_utils_base.py:2433] 2024-02-18 22:15:47,850 >> tokenizer config file saved in test/tokenizer_config.json
+[INFO|tokenization_utils_base.py:2442] 2024-02-18 22:15:47,850 >> Special tokens file saved in test/special_tokens_map.json
+***** train metrics *****
+  epoch                    =        3.0
+  train_loss               =     2.1872
+  train_runtime            = 0:04:06.46
+  train_samples_per_second =      17.71
+  train_steps_per_second   =      1.108
+Figure saved: test/training_loss.png
+02/18/2024 22:15:47 - WARNING - llmtuner.extras.ploting - No metric eval_loss to plot.
+[INFO|modelcard.py:452] 2024-02-18 22:15:47,931 >> Dropping the following result as it does not have all the necessary fields:
+{'task': {'name': 'Causal Language Modeling', 'type': 'text-generation'}}
+wandb: 
+wandb: Run history:
+wandb:                    train/epoch ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▆▆▆▆▇▇▇▇███
+wandb:              train/global_step ▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▆▆▆▆▇▇▇▇███
+wandb:            train/learning_rate ████▇▇▇▇▆▆▆▅▅▄▄▄▃▃▂▂▂▂▁▁▁▁▁
+wandb:                     train/loss ▆▅▆▆▅▄▅▄▅█▄▄▃▂▅▅▄▁▆▂▃▄▁▅▄▂▄
+wandb:               train/total_flos ▁
+wandb:               train/train_loss ▁
+wandb:            train/train_runtime ▁
+wandb: train/train_samples_per_second ▁
+wandb:   train/train_steps_per_second ▁
+wandb: 
+wandb: Run summary:
+wandb:                    train/epoch 3.0
+wandb:              train/global_step 273
+wandb:            train/learning_rate 0.0
+wandb:                     train/loss 2.1787
+wandb:               train/total_flos 2.777434086703104e+16
+wandb:               train/train_loss 2.18724
+wandb:            train/train_runtime 246.4686
+wandb: train/train_samples_per_second 17.71
+wandb:   train/train_steps_per_second 1.108
+wandb: 
+wandb: 🚀 View run fortuitous-rat-37 at: https://wandb.ai/augmxnt/huggingface/runs/lo1l3nmo
+wandb: ️⚡ View job at https://wandb.ai/augmxnt/huggingface/jobs/QXJ0aWZhY3RDb2xsZWN0aW9uOjEyNTU5ODkwOQ==/version_details/v16
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20240218_221141-lo1l3nmo/logs
+
+real    4m28.551s
+user    3m26.873s
+sys     1m7.894s
+
